@@ -94,7 +94,7 @@ For a new project you need the **big picture** as well as the current task:
 - [ ] Phase 4: Admin panel
 ```
 
-When Phase 0 is done, replace the top of `PLAN.md` with the Phase 1 steps, and tick Phase 0 in the roadmap.
+When Phase 0 is done, move the task part of `PLAN.md` (everything above the Roadmap) to `docs/plans/phase-0-setup.md`, write the Phase 1 steps in its place, and tick Phase 0 in the roadmap with a link to the archived file. `PLAN.md` stays short, and every phase is kept.
 
 ## Step 5: Start building
 

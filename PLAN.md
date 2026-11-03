@@ -18,6 +18,14 @@ A page at `/profile` where a logged-in user can see and edit their name, email, 
 ## Open questions
 - Should avatar upload go to our server or to Cloudinary?
 
+---
+
+## Roadmap
+- [x] Login & signup → `docs/plans/login.md`
+- [ ] User profile page  ← current
+- [ ] Account settings (password, delete account)
+- [ ] Email notifications
+
 ## How to work on this plan
 - Start a chat: `/resume-work` (shows where you stopped, checks half-done changes)
 - Do one step: "Do step N"

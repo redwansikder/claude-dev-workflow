@@ -49,6 +49,6 @@
 
 ### Never
 - Project-wide rules (those go in CLAUDE.md)
-- Old finished tasks (clear when done; git keeps history)
+- Old finished phases (move them to `docs/plans/` when done)
 - Long essays or code dumps
 - Secrets

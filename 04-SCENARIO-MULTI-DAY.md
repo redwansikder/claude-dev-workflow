@@ -411,9 +411,20 @@ git commit -am "step 7: deployed to Vercel" && git push
 
 > Update CLAUDE.md: add real commands, folder structure, and gotchas we found (Tailwind preflight vs MUI, migrations need a state check). Keep it under 60 lines.
 
-**3. Replace PLAN.md with Phase 1:**
+**3. Archive Phase 0, then write Phase 1:**
 
-> Phase 0 is done. Tick it in the Roadmap. Replace the task part of PLAN.md with Phase 1: tutor profiles (create, edit, list, view). Keep the Roadmap. Don't write code.
+> Phase 0 is done. Move the task part of PLAN.md to `docs/plans/phase-0-setup.md`. Tick Phase 0 in the Roadmap with a link to that file. Then write Phase 1 in PLAN.md: tutor profiles (create, edit, list, view). Keep the Roadmap. Don't write code.
+
+The Roadmap now works as an index of every phase:
+
+```md
+## Roadmap
+- [x] Phase 0: Setup → docs/plans/phase-0-setup.md
+- [ ] Phase 1: Tutor profiles  ← current
+- [ ] Phase 2: Search & filter
+```
+
+`PLAN.md` stays short because Claude reads it every session. Old phases are kept in `docs/plans/`, and Claude only opens them when you point to one.
 
 You review the new plan and commit:
 
@@ -510,7 +521,8 @@ You send the client the Vercel link. **The milestone is done a day early.**
 | | Day 1 | Day 2 | Day 3 | Day 5 |
 |---|---|---|---|---|
 | `CLAUDE.md` | 18 lines (decisions) | + Skills section | ~55 lines (commands, structure, gotchas) | + 1–2 new rules |
-| `PLAN.md` | Phase 0 + Roadmap | Phase 0 steps ticking | Replaced with Phase 1 | Phase 1 done |
+| `PLAN.md` | Phase 0 + Roadmap | Phase 0 steps ticking | Phase 0 archived, Phase 1 written | Phase 1 done |
+| `docs/plans/` | none | none | `phase-0-setup.md` | same |
 | Skills | none | `resume-work`, `finish-step` | same | same |
 | `.claude/settings.json` | `plansDirectory` | same | same | same |
 | Chats | 4 | 2 | 1 | 1 |
