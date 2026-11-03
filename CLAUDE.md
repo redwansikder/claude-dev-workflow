@@ -1,4 +1,6 @@
-# Project rules
+# Project: AccountHub — user accounts web app
+
+Users sign up, manage their profile, and change account settings.
 
 ## Stack
 - Next.js (App Router) + TypeScript
@@ -9,6 +11,12 @@
 - Dev server: `npm run dev`
 - Build: `npm run build`
 - Lint: `npm run lint`
+
+## Folder structure
+- `src/app/` — routes and API routes (`src/app/api/`)
+- `src/components/` — UI components, one per file
+- `src/lib/` — shared helpers
+- `docs/plans/` — finished task plans, archived from PLAN.md
 
 ## Code style
 - Use functional components and hooks

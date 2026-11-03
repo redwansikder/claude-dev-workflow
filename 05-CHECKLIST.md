@@ -1,4 +1,4 @@
-# CLAUDE.md & PLAN.md Checklist
+# CLAUDE.md, PLAN.md & Skills Checklist
 
 ## CLAUDE.md
 
@@ -10,6 +10,8 @@
 - Code style rules that Claude can't guess
 - How to work (read PLAN.md, one step at a time, check before done)
 - What to ask before doing (delete files, database changes, new packages)
+- Under ~80 lines
+- Updated when Claude repeats a mistake (add one line to fix it)
 
 ### Recommended
 - List of skills and when to use them
@@ -25,7 +27,9 @@
 - Long documentation
 - Obvious rules ("write clean code")
 - Things Claude can see from the code
+- Personal preferences that teammates don't share
 - Current task details (those go in PLAN.md)
+- Full skill steps (list the skill name only; steps go in the skill)
 
 ---
 
@@ -45,10 +49,25 @@
 - Open questions
 - Skill names in the steps that need them
 - How to work on this plan (`/resume-work` → step → `/finish-step`)
-- Roadmap / phases (for new projects)
+- Roadmap: every task or phase, with finished ones linked to `docs/plans/`
+- A `---` line between the task part (moves when done) and the permanent part (Roadmap, how to work)
 
 ### Never
 - Project-wide rules (those go in CLAUDE.md)
-- Old finished phases (move them to `docs/plans/` when done)
+- Old finished tasks (move everything above `---` to `docs/plans/<task>.md` when done)
 - Long essays or code dumps
 - Secrets
+
+---
+
+## Skills
+
+### Must have
+- One skill = one job
+- A `description` that says **when** to use it (Claude reads only this to decide)
+- Clear numbered steps in the body
+- Listed by name in CLAUDE.md
+
+### Never
+- Made in advance (wait until you've explained the same steps 3 times)
+- Secrets (project skills are committed to git)

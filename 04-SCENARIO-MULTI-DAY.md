@@ -409,7 +409,7 @@ git commit -am "step 7: deployed to Vercel" && git push
 
 **2. Update CLAUDE.md with real facts** (it's been 2 days of decisions):
 
-> Update CLAUDE.md: add real commands, folder structure, and gotchas we found (Tailwind preflight vs MUI, migrations need a state check). Keep it under 60 lines.
+> Update CLAUDE.md: add real commands, folder structure, and gotchas we found (Tailwind preflight vs MUI, migrations need a state check). Keep it under 80 lines.
 
 **3. Archive Phase 0, then write Phase 1:**
 
