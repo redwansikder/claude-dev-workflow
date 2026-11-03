@@ -21,7 +21,7 @@ A page at `/profile` where a logged-in user can see and edit their name, email, 
 ---
 
 ## Roadmap
-- [x] Login & signup → `docs/plans/login.md`
+- [x] Login & signup → [docs/plans/login.md](docs/plans/login.md)
 - [ ] User profile page  ← current
 - [ ] Account settings (password, delete account)
 - [ ] Email notifications
@@ -31,3 +31,4 @@ A page at `/profile` where a logged-in user can see and edit their name, email, 
 - Do one step: "Do step N"
 - End each step: `/finish-step` (lint, build, tick, commit message)
 - Then commit + push yourself
+- Task done: move everything above `---` to `docs/plans/<task>.md`, tick it in the Roadmap with a link, then write the next task above `---`
