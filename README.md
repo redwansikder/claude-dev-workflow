@@ -31,6 +31,16 @@ These are working examples you can copy into your own project.
 | [.claude/skills/finish-step/SKILL.md](.claude/skills/finish-step/SKILL.md) | Skill: lint, build, tick the step, suggest a commit message |
 | [.claude/settings.json](.claude/settings.json) | Keeps plan-mode plans inside the project (`.claude/plans/`) |
 
+## Extras
+
+| File | What it shows |
+|------|---------------|
+| [Finding your phases](extras/finding-phases-1.md) | How to choose a new project's phases, with a worked example |
+| [Finding your phases: example 2](extras/finding-phases-2.md) | Making the chain shorter: free first, paid later |
+| [Finding your phases: example 3](extras/finding-phases-3.md) | E-commerce: manual workarounds, order by pain |
+| [Finding your phases: example 4](extras/finding-phases-4.md) | Bus tickets: links that must stay, test the riskiest first |
+| [Finding your phases: example 5](extras/finding-phases-5.md) | Home services: two-sided apps, build one side, play the other by hand |
+
 ## The daily routine
 
 ```
