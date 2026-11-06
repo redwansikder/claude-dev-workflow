@@ -9,3 +9,6 @@ Read in this order:
 | 3 | [03-ai-engineer-roadmap.md](03-ai-engineer-roadmap.md) | Learning path in phases, with projects |
 | 4 | [04-ai-engineer-learning-path.md](04-ai-engineer-learning-path.md) | A second learning path for React/Next.js developers |
 | 5 | [05-ai-engineer-resources.md](05-ai-engineer-resources.md) | Study links for each phase of the roadmap |
+| 6 | [projects/06-ai-engineer-beginner-project.md](projects/06-ai-engineer-beginner-project.md) | A beginner RAG project (DocChat) in phases, with steps |
+| 7 | [projects/07-ai-engineer-beginner-project-2.md](projects/07-ai-engineer-beginner-project-2.md) | A beginner agent + MCP project (JobScout BD) in phases, with steps |
+| 8 | [projects/08-ai-engineer-beginner-project-3.md](projects/08-ai-engineer-beginner-project-3.md) | A beginner vision + production project (KhataSnap) in phases, with steps |
