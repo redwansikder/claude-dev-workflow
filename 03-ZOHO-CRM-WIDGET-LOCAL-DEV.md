@@ -62,7 +62,13 @@ npm run dev
 - Open http://localhost:3000.
 - Restart after changing `.env`.
 
-## 5. Test inside CRM before shipping
+## 5. Register the widget in CRM (demo5)
+
+- Setup → Developer Space → Widgets → Create New Widget
+  - Name `Payment Tracker (dev)`, Type **Related List**, Hosting **External**
+  - Base URL `https://127.0.0.1:3000/index.html`
+
+## 6. Test inside CRM before shipping
 
 ```bash
 zet run
