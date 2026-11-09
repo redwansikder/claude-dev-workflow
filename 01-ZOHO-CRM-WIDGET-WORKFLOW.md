@@ -17,7 +17,12 @@ Use both guides. They cover two sides of the same job:
    in the widget project. Use a demo org, never production.
 3. **Make localhost load inside CRM:**
    - HTTPS on the Vite dev server, with a fixed port
-   - the SDK `<script>` tag in `index.html`
+   - the SDK `<script>` tag in the `<head>` of `index.html`, before your app's script:
+
+     ```html
+     <script src="https://live.zwidgets.com/js-sdk/1.2/ZohoEmbededAppSDK.min.js"></script>
+     ```
+
    - the CRM widget URL set to `https://127.0.0.1:<port>`
 4. **Add a `CLAUDE.md`** to the project so Claude starts each session with the
    right context:
