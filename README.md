@@ -1,59 +1,21 @@
-# Claude Dev Workflow
+# Notes
 
-A short guide to working with Claude Code on real projects, using three things:
+Notes and guides, with one branch per topic. `main` only holds this page and the index.
 
-- **`CLAUDE.md`**: project rules Claude reads in every chat
-- **`PLAN.md`**: the current task, split into small steps
-- **Skills**: reusable instructions Claude loads only when needed
+See [INDEX.md](INDEX.md) for a link to every note.
 
-With this setup, a power cut, a restart or a full chat costs you minutes instead of hours, because the state of your work lives in files and not in the chat.
+## Topics
 
-## Read in this order
+| Topic | What it covers |
+|---|---|
+| [Claude Code workflow](https://github.com/redwansikder/claude-dev-workflow/blob/dev-workflow-with-claude/README.md) | Working with Claude Code on real projects using `CLAUDE.md`, `PLAN.md` and skills |
+| [AI engineer](https://github.com/redwansikder/claude-dev-workflow/blob/ai-engineer/ai-engineer/README.md) | The role, a roadmap, learning resources and beginner projects |
+| [.NET](https://github.com/redwansikder/claude-dev-workflow/tree/dotnet/dotnet) | .NET basics, practice projects and an avatar upload API guide |
+| [Hosting plan](https://github.com/redwansikder/claude-dev-workflow/blob/hosting-plan/hosting-plan.md) | Infrastructure and costs for an e-commerce SaaS with 50 clients |
+| [PC build prices](https://github.com/redwansikder/claude-dev-workflow/blob/pc-build-price/PC-BUILD-PRICE.md) | PC parts price list for Bangladesh |
+| [Zoho CRM widgets](https://github.com/redwansikder/claude-dev-workflow/tree/zoho-mcp) | Building Zoho CRM widgets and using the Zoho MCP server |
 
-| # | Chapter | What you learn |
-|---|---------|----------------|
-| 1 | [Writing a good CLAUDE.md](01-CLAUDE-MD-GUIDE.md) | What goes in CLAUDE.md, and what never does |
-| 2 | [Starting a new project](02-NEW-PROJECT-GUIDE.md) | Decide first, then write CLAUDE.md and PLAN.md before any code |
-| 3 | [Using skills](03-SKILLS-GUIDE.md) | When to make a skill and how to use it from PLAN.md |
-| 4 | [A real project, day by day](04-SCENARIO-MULTI-DAY.md) | Chapters 1–3 in a new project, built over 5 days with 7 interruptions |
-| 5 | [Checklist](05-CHECKLIST.md) | A quick review page to keep open while you work |
-
-## Sample files
-
-These are working examples you can copy into your own project.
-
-| File | What it shows |
-|------|---------------|
-| [CLAUDE.md](CLAUDE.md) | Project rules for a Next.js + TypeScript app |
-| [PLAN.md](PLAN.md) | A task in progress, with a Roadmap |
-| [docs/plans/login.md](docs/plans/login.md) | A finished task, archived out of PLAN.md |
-| [.claude/skills/resume-work/SKILL.md](.claude/skills/resume-work/SKILL.md) | Skill: check git and PLAN.md, report where work stopped |
-| [.claude/skills/finish-step/SKILL.md](.claude/skills/finish-step/SKILL.md) | Skill: lint, build, tick the step, suggest a commit message |
-| [.claude/settings.json](.claude/settings.json) | Keeps plan-mode plans inside the project (`.claude/plans/`) |
-
-## Extras
-
-| File | What it shows |
-|------|---------------|
-| [Finding your phases](extras/finding-phases-1.md) | How to choose a new project's phases, with a worked example |
-| [Finding your phases: example 2](extras/finding-phases-2.md) | Making the chain shorter: free first, paid later |
-| [Finding your phases: example 3](extras/finding-phases-3.md) | E-commerce: manual workarounds, order by pain |
-| [Finding your phases: example 4](extras/finding-phases-4.md) | Bus tickets: links that must stay, test the riskiest first |
-| [Finding your phases: example 5](extras/finding-phases-5.md) | Home services: two-sided apps, build one side, play the other by hand |
-
-## The daily routine
-
-```
-/resume-work  →  "Do step N"  →  check it yourself  →  /finish-step  →  commit + push
-```
-
-When a task is done, move it from `PLAN.md` to `docs/plans/`, tick it in the Roadmap with a link, and write the next task.
-
-## Use it in your project
-
-1. Copy `.claude/` into your project root.
-2. Write your own `CLAUDE.md` (chapter 1) and `PLAN.md` (chapter 2).
-3. Start a chat with `/resume-work`.
+To work on a topic locally, run `git switch <branch>`.
 
 ## License
 
