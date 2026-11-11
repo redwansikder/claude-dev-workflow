@@ -12,3 +12,5 @@ Read in this order:
 | 6 | [projects/06-ai-engineer-beginner-project.md](projects/06-ai-engineer-beginner-project.md) | A beginner RAG project (DocChat) in phases, with steps |
 | 7 | [projects/07-ai-engineer-beginner-project-2.md](projects/07-ai-engineer-beginner-project-2.md) | A beginner agent + MCP project (JobScout BD) in phases, with steps |
 | 8 | [projects/08-ai-engineer-beginner-project-3.md](projects/08-ai-engineer-beginner-project-3.md) | A beginner vision + production project (KhataSnap) in phases, with steps |
+| 9 | [09-where-agent-knowledge-lives.md](09-where-agent-knowledge-lives.md) | Where an agent gets its knowledge about an org, and where each part lives |
+| 10 | [10-build-mcp-and-agent-for-your-service.md](10-build-mcp-and-agent-for-your-service.md) | Steps to build an MCP server and an agent for your own service, with good and bad tool design examples |
