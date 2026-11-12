@@ -17,3 +17,6 @@ Read in this order:
 | 11 | [11-free-ai-engineer-setup.md](11-free-ai-engineer-setup.md) | Learning for $0 without a local model: free API tiers with limits, one function to switch providers (JS/.NET), free hosting. Start here for 12 and 13 |
 | 12 | [12-free-gpu-colab-kaggle.md](12-free-gpu-colab-kaggle.md) | Free cloud GPUs: what Colab and Kaggle are, every step from account to GPU, limits, and using both together |
 | 13 | [13-run-ollama-on-free-gpu.md](13-run-ollama-on-free-gpu.md) | Run Ollama on a free GPU, get a tunnel URL, and call the model from JavaScript or .NET |
+| 14 | [14-free-api-tiers.md](14-free-api-tiers.md) | Free API tiers: one piece of code for every provider (JS/.NET), rules for base URLs, and a summary of limits |
+| 15 | [15-free-api-providers-part-1.md](15-free-api-providers-part-1.md) | Gemini, Groq and GitHub Models step by step: get a key, find the URL in their docs, test it, limits |
+| 16 | [16-free-api-providers-part-2.md](16-free-api-providers-part-2.md) | OpenRouter, Cloudflare Workers AI and backups (Mistral, Cerebras, Hugging Face) step by step |

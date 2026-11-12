@@ -15,6 +15,8 @@ You can learn the whole path for free. Use **free cloud APIs** for most of the w
 | **Cloudflare Workers AI**           | Hosted open models plus embeddings                         | **10,000 "Neurons" a day**, shared across all models (big models use more). Resets at 00:00 UTC                                                                                                                                                          | Small apps you deploy                  |
 | **Mistral, Cerebras, Hugging Face** | Free or trial tiers                                        | Varies; check each console                                                                                                                                                                                                                               | Backups when you hit a limit           |
 
+For every step to get each key, the values to put in your code, and more detail on the limits, see [14-free-api-tiers.md](14-free-api-tiers.md).
+
 ## 2. Free cloud GPUs: Google Colab and Kaggle
 
 You can also run open models (Llama, Qwen, Gemma) yourself on a free cloud GPU. This is useful for eval runs that would use up an API's daily quota, and for learning how open models behave.
