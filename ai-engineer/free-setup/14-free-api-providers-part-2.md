@@ -2,7 +2,7 @@
 
 For each provider: how to get a key, where to find the URL in its docs, what to put in your code, and the free limits.
 
-Read [14-free-api-tiers.md](14-free-api-tiers.md) first. It has the test code (JS and .NET) and the **Rules for any base URL** (Rule 1–3) that these steps refer to. Part 1 is [15-free-api-providers-part-1.md](15-free-api-providers-part-1.md).
+Read [12-free-api-tiers.md](12-free-api-tiers.md) first. It has the test code (JS and .NET) and the **Rules for any base URL** (Rule 1–3) that these steps refer to. Part 1 is [13-free-api-providers-part-1.md](13-free-api-providers-part-1.md).
 
 > Limits were looked up in Nov 2026, mostly from third-party sites. Check each provider's console before you depend on them.
 
@@ -42,7 +42,7 @@ Read [14-free-api-tiers.md](14-free-api-tiers.md) first. It has the test code (J
    curl -s https://openrouter.ai/api/v1/models -H "Authorization: Bearer YOUR_KEY"
    ```
 
-   A long list of models means the URL works. This list works even with a wrong key, so also send one chat message with the JS test in [14-free-api-tiers.md](14-free-api-tiers.md) to check the key.
+   A long list of models means the URL works. This list works even with a wrong key, so also send one chat message with the JS test in [12-free-api-tiers.md](12-free-api-tiers.md) to check the key.
 
 **Model names:** go to **openrouter.ai/models** and type **free** in the search box. Click a model, then open its **API** tab. The sample there shows the exact name, like `meta-llama/llama-3.3-70b-instruct:free`. Make sure it ends in **`:free`**, or you'll be charged.
 

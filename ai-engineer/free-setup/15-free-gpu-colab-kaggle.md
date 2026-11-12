@@ -1,6 +1,6 @@
 # Free Cloud GPUs: Google Colab and Kaggle
 
-Part of the $0 setup in [11-free-ai-engineer-setup.md](11-free-ai-engineer-setup.md). This note shows how to get a free GPU on Colab or Kaggle. When you have one, go to [13-run-ollama-on-free-gpu.md](13-run-ollama-on-free-gpu.md) to run a model on it and get the URL for your code.
+Part of the $0 setup in [11-free-setup-overview.md](11-free-setup-overview.md). This note shows how to get a free GPU on Colab or Kaggle. When you have one, go to [16-run-ollama-on-free-gpu.md](16-run-ollama-on-free-gpu.md) to run a model on it and get the URL for your code.
 
 > Limits were looked up in Nov 2026 and change often. Check each site before you depend on a number.
 
@@ -19,8 +19,8 @@ Colab and Kaggle are **two separate free services**. They are not connected to e
 **Think of them as two free gyms.** You go to gym A (Colab). If it's full that day, you go to gym B (Kaggle) and do the same workout.
 
 - They share nothing: no files, no sessions, no time quota. Using one doesn't reduce your time on the other, which is why having both gives you more free GPU time in total.
-- The **setup cells are the same** on both (Steps A to F in [13-run-ollama-on-free-gpu.md](13-run-ollama-on-free-gpu.md)).
-- **Your JS or .NET code doesn't care** which one you use. It only sees a URL (section 2 of [13-run-ollama-on-free-gpu.md](13-run-ollama-on-free-gpu.md)).
+- The **setup cells are the same** on both (Steps A to F in [16-run-ollama-on-free-gpu.md](16-run-ollama-on-free-gpu.md)).
+- **Your JS or .NET code doesn't care** which one you use. It only sees a URL (section 2 of [16-run-ollama-on-free-gpu.md](16-run-ollama-on-free-gpu.md)).
 
 ## 2. Google Colab
 
@@ -39,7 +39,7 @@ Colab and Kaggle are **two separate free services**. They are not connected to e
    ```
 
    You should see a table that mentions **Tesla T4**. If you see an error like "NVIDIA-SMI has failed", you didn't get a GPU. Go back to step 5, or use Kaggle today.
-8. **Continue with [13-run-ollama-on-free-gpu.md](13-run-ollama-on-free-gpu.md)** (Steps A to F). These steps get you the URL.
+8. **Continue with [16-run-ollama-on-free-gpu.md](16-run-ollama-on-free-gpu.md)** (Steps A to F). These steps get you the URL.
 
 **Next time (a new session):** open the same notebook. Go to **colab.research.google.com**, use **File → Open notebook**, and pick it from the list. Then click **Connect**, and run all cells with **Runtime → Run all** (Ctrl + F9). Copy the new URL from the last cell.
 
@@ -79,7 +79,7 @@ drive.mount('/content/drive')
    ```
 
    You should see a table that mentions **Tesla T4**.
-8. **Continue with [13-run-ollama-on-free-gpu.md](13-run-ollama-on-free-gpu.md)** (Steps A to F). These steps get you the URL.
+8. **Continue with [16-run-ollama-on-free-gpu.md](16-run-ollama-on-free-gpu.md)** (Steps A to F). These steps get you the URL.
 
 **Next time (a new session):** go to **kaggle.com → Code → Your Work** and open the notebook. Start the session, check that the GPU and Internet are still on, then use **Run All**. Copy the new URL from the last cell.
 
@@ -105,7 +105,7 @@ Kaggle changes its menus from time to time. If a button isn't where these steps 
 
 1. Open **Colab** and run the setup cells. Paste the tunnel URL into your code.
 2. If Colab says "Cannot connect to GPU backend", open **Kaggle**, run the **same setup cells**, and paste the new URL into your code.
-3. If both are out of GPU time, use the free **API tiers** (Gemini or Groq) through your `chat()` function (section 3 of [11-free-ai-engineer-setup.md](11-free-ai-engineer-setup.md)). They need no GPU at all.
+3. If both are out of GPU time, use the free **API tiers** (Gemini or Groq) through your `chat()` function (section 3 of [11-free-setup-overview.md](11-free-setup-overview.md)). They need no GPU at all.
 
 **Example: about 5 hours of work a day (about 35 hours a week)**
 

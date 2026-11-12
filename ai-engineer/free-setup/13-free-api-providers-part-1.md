@@ -2,7 +2,7 @@
 
 For each provider: how to get a key, where to find the URL in its docs, what to put in your code, and the free limits.
 
-Read [14-free-api-tiers.md](14-free-api-tiers.md) first. It has the test code (JS and .NET) and the **Rules for any base URL** (Rule 1–3) that these steps refer to. Part 2 is [16-free-api-providers-part-2.md](16-free-api-providers-part-2.md).
+Read [12-free-api-tiers.md](12-free-api-tiers.md) first. It has the test code (JS and .NET) and the **Rules for any base URL** (Rule 1–3) that these steps refer to. Part 2 is [14-free-api-providers-part-2.md](14-free-api-providers-part-2.md).
 
 > Limits were looked up in Nov 2026, mostly from third-party sites. Check each provider's console before you depend on them.
 
@@ -153,7 +153,7 @@ curl -s -i https://api.groq.com/openai/v1/chat/completions \
   | grep -i "ratelimit\|retry-after"
 ```
 
-To read the headers in your own code, see "Read the rate-limit headers in code" in [14-free-api-tiers.md](14-free-api-tiers.md).
+To read the headers in your own code, see "Read the rate-limit headers in code" in [12-free-api-tiers.md](12-free-api-tiers.md).
 
 **Other limitations**
 

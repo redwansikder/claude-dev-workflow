@@ -1,8 +1,8 @@
 # Free API Tiers: Connect, Use, Limits
 
-Part of the $0 setup in [11-free-ai-engineer-setup.md](11-free-ai-engineer-setup.md). This note has what is the same for every free API provider: the test code (JS and .NET), the rules for base URLs, and a summary of all providers.
+Part of the $0 setup in [11-free-setup-overview.md](11-free-setup-overview.md). This note has what is the same for every free API provider: the test code (JS and .NET), the rules for base URLs, and a summary of all providers.
 
-For each provider step by step (getting a key, finding the URL in its docs, testing it, limits), see [15-free-api-providers-part-1.md](15-free-api-providers-part-1.md) and [16-free-api-providers-part-2.md](16-free-api-providers-part-2.md).
+For each provider step by step (getting a key, finding the URL in its docs, testing it, limits), see [13-free-api-providers-part-1.md](13-free-api-providers-part-1.md) and [14-free-api-providers-part-2.md](14-free-api-providers-part-2.md).
 
 > **About the limits:** they were looked up in Nov 2026, mostly from third-party sites, and sources often disagree. Where they disagree, a range is given. Model names and limits change often, so check each provider's console before you depend on them.
 
@@ -20,7 +20,7 @@ Store the key in a `.env` file (JS) or user secrets (.NET). **Never commit API k
 
 ### Rules for any base URL
 
-Each provider section in notes 15 and 16 has a **"Find the URL in ... docs"** part. It says which page to open, what you'll see there, what to copy, and how to test it. These rules apply to all of them.
+Each provider section in notes 13 and 14 has a **"Find the URL in ... docs"** part. It says which page to open, what you'll see there, what to copy, and how to test it. These rules apply to all of them.
 
 **Rule 1: Keep only the base part.** Some docs show the full address, with `/chat/completions` at the end. If so, cut that part off:
 
@@ -53,7 +53,7 @@ Model names change often. For most providers you can ask for the current list:
 curl -s "$LLM_BASE_URL/models" -H "Authorization: Bearer $LLM_API_KEY"
 ```
 
-The `id` values in the reply are the names you can use as `LLM_MODEL`. GitHub Models and Cloudflare work differently: their sections in notes 15 and 16 say where to find the names.
+The `id` values in the reply are the names you can use as `LLM_MODEL`. GitHub Models and Cloudflare work differently: their sections in notes 13 and 14 say where to find the names.
 
 ### Test call: JavaScript (Node 20+)
 
@@ -143,7 +143,7 @@ There are two exceptions where real credit is involved:
 - **OpenRouter**, once you top up. Free `:free` models still cost $0.
 - **Hugging Face**, which gives a small amount of free credit each month.
 
-Each provider section in notes 15 and 16 has **How much is that in practice** and **Check what you have left**.
+Each provider section in notes 13 and 14 has **How much is that in practice** and **Check what you have left**.
 
 ### Read the rate-limit headers in code
 
@@ -180,8 +180,8 @@ Getting a key, finding the URL in each provider's docs, testing it, and the limi
 
 | Note | Providers |
 |---|---|
-| [15-free-api-providers-part-1.md](15-free-api-providers-part-1.md) | Google Gemini, Groq, GitHub Models |
-| [16-free-api-providers-part-2.md](16-free-api-providers-part-2.md) | OpenRouter, Cloudflare Workers AI, and backups (Mistral, Cerebras, Hugging Face) |
+| [13-free-api-providers-part-1.md](13-free-api-providers-part-1.md) | Google Gemini, Groq, GitHub Models |
+| [14-free-api-providers-part-2.md](14-free-api-providers-part-2.md) | OpenRouter, Cloudflare Workers AI, and backups (Mistral, Cerebras, Hugging Face) |
 
 ## 3. Summary
 

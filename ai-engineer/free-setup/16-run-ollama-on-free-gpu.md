@@ -1,6 +1,6 @@
 # Run a Model on a Free GPU and Call It from Your Code
 
-**Before you start:** you need a Colab or Kaggle notebook with the GPU turned on. If you don't have one yet, follow [12-free-gpu-colab-kaggle.md](12-free-gpu-colab-kaggle.md) (Colab steps 1–7 or Kaggle steps 1–7) first.
+**Before you start:** you need a Colab or Kaggle notebook with the GPU turned on. If you don't have one yet, follow [15-free-gpu-colab-kaggle.md](15-free-gpu-colab-kaggle.md) (Colab steps 1–7 or Kaggle steps 1–7) first.
 
 This note takes you from that notebook to a URL like `https://abc-xyz.trycloudflare.com`, and then shows how to call the model from JavaScript or .NET on your PC.
 
@@ -176,7 +176,7 @@ Then run `dotnet run`.
 
 ## Next
 
-- To switch between this model and free APIs (Gemini, Groq, OpenRouter) with one function, see section 3 of [11-free-ai-engineer-setup.md](11-free-ai-engineer-setup.md).
-- If Colab or Kaggle stops giving you a GPU, see section 4 of [12-free-gpu-colab-kaggle.md](12-free-gpu-colab-kaggle.md).
+- To switch between this model and free APIs (Gemini, Groq, OpenRouter) with one function, see section 3 of [11-free-setup-overview.md](11-free-setup-overview.md).
+- If Colab or Kaggle stops giving you a GPU, see section 4 of [15-free-gpu-colab-kaggle.md](15-free-gpu-colab-kaggle.md).
 
 > Code not yet tested end to end.

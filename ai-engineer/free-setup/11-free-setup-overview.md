@@ -15,7 +15,7 @@ You can learn the whole path for free. Use **free cloud APIs** for most of the w
 | **Cloudflare Workers AI**           | Hosted open models plus embeddings                         | **10,000 "Neurons" a day**, shared across all models (big models use more). Resets at 00:00 UTC                                                                                                                                                          | Small apps you deploy                  |
 | **Mistral, Cerebras, Hugging Face** | Free or trial tiers                                        | Varies; check each console                                                                                                                                                                                                                               | Backups when you hit a limit           |
 
-For every step to get each key, the values to put in your code, and more detail on the limits, see [14-free-api-tiers.md](14-free-api-tiers.md).
+For every step to get each key, the values to put in your code, and more detail on the limits, see [12-free-api-tiers.md](12-free-api-tiers.md).
 
 ## 2. Free cloud GPUs: Google Colab and Kaggle
 
@@ -28,8 +28,8 @@ You can also run open models (Llama, Qwen, Gemma) yourself on a free cloud GPU. 
 
 The step-by-step guides are in two separate notes:
 
-1. [12-free-gpu-colab-kaggle.md](12-free-gpu-colab-kaggle.md) explains what Colab and Kaggle are and how they relate. It has every step from creating an account to turning on the GPU, plus the limits and how to use both together.
-2. [13-run-ollama-on-free-gpu.md](13-run-ollama-on-free-gpu.md) shows how to install Ollama, download a model and get a URL like `https://abc-xyz.trycloudflare.com`. It also has JavaScript and .NET code to call the model.
+1. [15-free-gpu-colab-kaggle.md](15-free-gpu-colab-kaggle.md) explains what Colab and Kaggle are and how they relate. It has every step from creating an account to turning on the GPU, plus the limits and how to use both together.
+2. [16-run-ollama-on-free-gpu.md](16-run-ollama-on-free-gpu.md) shows how to install Ollama, download a model and get a URL like `https://abc-xyz.trycloudflare.com`. It also has JavaScript and .NET code to call the model.
 
 ## 3. Write one function and switch providers later
 
@@ -107,7 +107,7 @@ In .NET, store the base URL, key and model in `appsettings.json` or user secrets
 
 1. Use **Gemini's free tier** as your main model and embeddings. Keep **Groq** as a backup; it has the highest daily limits.
 2. Use **GitHub Models** and **OpenRouter** to try other models. Their daily limits are small (50–150 requests).
-3. Use **Colab or Kaggle with Ollama** ([12](12-free-gpu-colab-kaggle.md), [13](13-run-ollama-on-free-gpu.md)) for eval runs that would use up an API's daily quota.
+3. Use **Colab or Kaggle with Ollama** ([15](15-free-gpu-colab-kaggle.md), [16](16-run-ollama-on-free-gpu.md)) for eval runs that would use up an API's daily quota.
 4. Call every model through the **one `chat()` / `ChatAsync()` function** above, so switching provider is a config change.
 5. Build projects 06–08 this way. Deploy on Vercel with a Supabase database, and remember the 7-day pause.
 6. Later, when you can, add **$5** of Claude API credit. Run your eval set across providers and write up the comparison in your README.
