@@ -6,146 +6,28 @@ You can learn the whole path for free. Use **free cloud APIs** for most of the w
 
 ## 1. Free API tiers
 
-| Provider | What you get | Free limits (approx.) | Good for |
-|---|---|---|---|
-| **Google Gemini (AI Studio)** | Strong Flash models, long context, and free embeddings | Flash only. About 10–15 requests/min and somewhere from about **20 to 1,500 requests/day** (sources disagree a lot, so check your console). Pro models are paid-only or tightly capped. Limits apply per project, and the day resets at midnight Pacific | Main model for all projects |
-| **Groq** | Open models (Llama, Qwen and others) on very fast hardware | About **30 requests/min**, about **1,000–14,400 requests/day**, and about 6K–30K tokens/min. The numbers vary by model and apply to your whole organisation, so extra keys don't help | Chat, agents, tool calling |
-| **GitHub Models** | Several models with just a GitHub account | Low-tier models: **15/min, 150/day**. High-tier models: **10/min, 50/day**. About 8K input / 4K output tokens per request, and 5 requests at once. Limits apply per model | Trying different models |
-| **OpenRouter** | Many `:free` models behind one API | **20/min**. **50/day**, or **1,000/day** once you've bought $10 of credit in total | Switching models without changing code |
-| **Cloudflare Workers AI** | Hosted open models plus embeddings | **10,000 "Neurons" a day**, shared across all models (big models use more). Resets at 00:00 UTC | Small apps you deploy |
-| **Mistral, Cerebras, Hugging Face** | Free or trial tiers | Varies; check each console | Backups when you hit a limit |
+| Provider                            | What you get                                               | Free limits (approx.)                                                                                                                                                                                                                                    | Good for                               |
+| ----------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| **Google Gemini (AI Studio)**       | Strong Flash models, long context, and free embeddings     | Flash only. About 10–15 requests/min and somewhere from about **20 to 1,500 requests/day** (sources disagree a lot, so check your console). Pro models are paid-only or tightly capped. Limits apply per project, and the day resets at midnight Pacific | Main model for all projects            |
+| **Groq**                            | Open models (Llama, Qwen and others) on very fast hardware | About **30 requests/min**, about **1,000–14,400 requests/day**, and about 6K–30K tokens/min. The numbers vary by model and apply to your whole organisation, so extra keys don't help                                                                    | Chat, agents, tool calling             |
+| **GitHub Models**                   | Several models with just a GitHub account                  | Low-tier models: **15/min, 150/day**. High-tier models: **10/min, 50/day**. About 8K input / 4K output tokens per request, and 5 requests at once. Limits apply per model                                                                                | Trying different models                |
+| **OpenRouter**                      | Many `:free` models behind one API                         | **20/min**. **50/day**, or **1,000/day** once you've bought $10 of credit in total                                                                                                                                                                       | Switching models without changing code |
+| **Cloudflare Workers AI**           | Hosted open models plus embeddings                         | **10,000 "Neurons" a day**, shared across all models (big models use more). Resets at 00:00 UTC                                                                                                                                                          | Small apps you deploy                  |
+| **Mistral, Cerebras, Hugging Face** | Free or trial tiers                                        | Varies; check each console                                                                                                                                                                                                                               | Backups when you hit a limit           |
 
-## 2. Free cloud GPUs: run your own models on Colab
+## 2. Free cloud GPUs: Google Colab and Kaggle
 
-| Platform | Free limits (approx.) |
-|---|---|
-| **Google Colab** | T4 GPU (15 GB). The session stops after about **90 minutes idle**, or about **12 hours** at most. A GPU isn't guaranteed at busy times. Remote-access use is restricted |
-| **Kaggle** | T4 GPU, about **30 GPU hours a week**. Sessions are up to about 12 hours. You need to verify a phone number to use the GPU and turn Internet on |
+You can also run open models (Llama, Qwen, Gemma) yourself on a free cloud GPU. This is useful for eval runs that would use up an API's daily quota, and for learning how open models behave.
 
-Colab notebooks only run Python, so the **setup cells** below use Python and shell commands. Your **app code on your PC** can be JS or .NET.
+| Site | Free GPU | Limits (approx.) |
+|---|---|---|
+| **Google Colab** | T4 (15 GB) | Session ends after about 90 minutes idle or about 12 hours. Hidden usage limits |
+| **Kaggle** | T4 | About 30 GPU hours a week. Sessions up to about 12 hours |
 
-### Step 1: Open Colab and turn on the GPU
+The step-by-step guides are in two separate notes:
 
-1. Go to **colab.research.google.com** and sign in with Google.
-2. Click **New notebook**.
-3. Open the menu **Runtime → Change runtime type**, pick **T4 GPU**, then **Save**.
-
-### Step 2: Setup cells (run once per session)
-
-```python
-# 1. Install Ollama
-!apt-get install -y zstd > /dev/null
-!curl -fsSL https://ollama.com/install.sh | sh
-
-# 2. Start the server in the background
-import subprocess, time
-subprocess.Popen(["ollama", "serve"])
-time.sleep(5)
-
-# 3. Download a model (7–8B fits easily on the T4; llama3.1:8b and gemma2:9b also work)
-!ollama pull qwen2.5:7b
-
-# 4. Quick test inside Colab
-!curl -s http://localhost:11434/api/chat -d '{"model":"qwen2.5:7b","messages":[{"role":"user","content":"hi"}],"stream":false}'
-
-# 5. Open a tunnel so your PC can reach it
-!wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -O cloudflared
-!chmod +x cloudflared
-subprocess.Popen(
-    ["./cloudflared", "tunnel", "--url", "http://localhost:11434",
-     "--http-host-header", "localhost:11434"],
-    stdout=open("cf.log", "w"), stderr=subprocess.STDOUT,
-)
-time.sleep(8)
-!grep -o 'https://[a-z0-9-]*\.trycloudflare\.com' cf.log
-```
-
-The last line prints a URL like `https://abc-xyz.trycloudflare.com`. Copy it.
-
-Before you rely on the tunnel, know three things:
-
-- **Anyone who has the URL can use the model.** Don't share it.
-- **The URL changes every session.**
-- **Colab's free-tier rules restrict remote-access use.** Long-running tunnels can get your session cut off. Use the tunnel for short sessions only.
-
-### Step 3: Call it from your PC with JavaScript (Node 18+)
-
-**Plain `fetch`, no packages:**
-
-```js
-// chat.mjs  →  run: node chat.mjs
-const BASE = "https://abc-xyz.trycloudflare.com"; // your tunnel URL
-
-const res = await fetch(`${BASE}/api/chat`, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    model: "qwen2.5:7b",
-    messages: [{ role: "user", content: "Explain RAG in 3 lines" }],
-    stream: false,
-  }),
-});
-
-const data = await res.json();
-console.log(data.message.content);
-```
-
-**Or with the official `ollama` package** (run `npm i ollama` first):
-
-```js
-import { Ollama } from "ollama";
-
-const ollama = new Ollama({ host: "https://abc-xyz.trycloudflare.com" });
-const r = await ollama.chat({
-  model: "qwen2.5:7b",
-  messages: [{ role: "user", content: "Explain RAG in 3 lines" }],
-});
-console.log(r.message.content);
-```
-
-### Step 3 (alternative): Call it from your PC with .NET (6+)
-
-```bash
-dotnet new console -n OllamaTest
-cd OllamaTest
-```
-
-Replace the contents of `Program.cs` with:
-
-```csharp
-using System.Net.Http.Json;
-using System.Text.Json;
-
-var http = new HttpClient
-{
-    BaseAddress = new Uri("https://abc-xyz.trycloudflare.com") // your tunnel URL
-};
-
-var res = await http.PostAsJsonAsync("/api/chat", new
-{
-    model = "qwen2.5:7b",
-    messages = new[] { new { role = "user", content = "Explain RAG in 3 lines" } },
-    stream = false
-});
-res.EnsureSuccessStatusCode();
-
-var json = await res.Content.ReadFromJsonAsync<JsonElement>();
-Console.WriteLine(json.GetProperty("message").GetProperty("content").GetString());
-```
-
-Then run `dotnet run`.
-
-### Kaggle setup
-
-Go to kaggle.com, then **Create → Notebook**. In the side panel under **Settings**, set the **Accelerator to GPU T4** and turn **Internet on**. After that, run the same setup cells.
-
-### Colab and Kaggle problems and fixes
-
-| Issue | Fix |
-|---|---|
-| Session ended | Rerun the setup cells. It takes about 3 minutes, and you get a new tunnel URL |
-| Model gone after a restart | Download it again (7B is about 5 GB and quick), or save models to Google Drive |
-| No GPU available | Try later, or switch to Kaggle |
+1. [12-free-gpu-colab-kaggle.md](12-free-gpu-colab-kaggle.md) explains what Colab and Kaggle are and how they relate. It has every step from creating an account to turning on the GPU, plus the limits and how to use both together.
+2. [13-run-ollama-on-free-gpu.md](13-run-ollama-on-free-gpu.md) shows how to install Ollama, download a model and get a URL like `https://abc-xyz.trycloudflare.com`. It also has JavaScript and .NET code to call the model.
 
 ## 3. Write one function and switch providers later
 
@@ -166,7 +48,8 @@ async function chat(prompt) {
       messages: [{ role: "user", content: prompt }],
     }),
   });
-  if (res.status === 429) throw new Error("Rate limited: switch provider or wait");
+  if (res.status === 429)
+    throw new Error("Rate limited: switch provider or wait");
   const data = await res.json();
   return data.choices[0].message.content;
 }
@@ -193,23 +76,23 @@ async Task<string> ChatAsync(HttpClient http, string model, string prompt)
 }
 ```
 
-| Provider | `LLM_BASE_URL` |
-|---|---|
-| Colab Ollama | `https://abc-xyz.trycloudflare.com/v1` |
-| Groq | `https://api.groq.com/openai/v1` |
-| OpenRouter | `https://openrouter.ai/api/v1` |
-| Gemini | `https://generativelanguage.googleapis.com/v1beta/openai` |
+| Provider     | `LLM_BASE_URL`                                            |
+| ------------ | --------------------------------------------------------- |
+| Colab Ollama | `https://abc-xyz.trycloudflare.com/v1`                    |
+| Groq         | `https://api.groq.com/openai/v1`                          |
+| OpenRouter   | `https://openrouter.ai/api/v1`                            |
+| Gemini       | `https://generativelanguage.googleapis.com/v1beta/openai` |
 
 In .NET, store the base URL, key and model in `appsettings.json` or user secrets.
 
 ## 4. Free storage and hosting
 
-| Service | Free limits (approx.) |
-|---|---|
+| Service                            | Free limits (approx.)                                                                                                                                                           |
+| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Supabase** (Postgres + pgvector) | **500 MB** database, 1 GB file storage, 5 GB bandwidth, 2 projects. The project **pauses after 7 days of no activity**; your data is kept and you restore it from the dashboard |
-| **Vercel Hobby** | Personal, **non-commercial** use only. About 100 GB transfer, 1M edge requests a month, and 100 deploys a day |
-| **Render Free** | The app **sleeps after 15 minutes idle** and takes about **1 minute** to wake. 750 instance hours a month. The disk is wiped on every restart |
-| **GitHub** | Free public and private repos for your code and CV |
+| **Vercel Hobby**                   | Personal, **non-commercial** use only. About 100 GB transfer, 1M edge requests a month, and 100 deploys a day                                                                   |
+| **Render Free**                    | The app **sleeps after 15 minutes idle** and takes about **1 minute** to wake. 750 instance hours a month. The disk is wiped on every restart                                   |
+| **GitHub**                         | Free public and private repos for your code and CV                                                                                                                              |
 
 ## The catches
 
@@ -222,7 +105,7 @@ In .NET, store the base URL, key and model in `appsettings.json` or user secrets
 
 1. Use **Gemini's free tier** as your main model and embeddings. Keep **Groq** as a backup; it has the highest daily limits.
 2. Use **GitHub Models** and **OpenRouter** to try other models. Their daily limits are small (50–150 requests).
-3. Use **Colab with Ollama** for eval runs that would use up an API's daily quota.
+3. Use **Colab or Kaggle with Ollama** ([12](12-free-gpu-colab-kaggle.md), [13](13-run-ollama-on-free-gpu.md)) for eval runs that would use up an API's daily quota.
 4. Call every model through the **one `chat()` / `ChatAsync()` function** above, so switching provider is a config change.
 5. Build projects 06–08 this way. Deploy on Vercel with a Supabase database, and remember the 7-day pause.
 6. Later, when you can, add **$5** of Claude API credit. Run your eval set across providers and write up the comparison in your README.
