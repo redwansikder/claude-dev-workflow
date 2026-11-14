@@ -29,7 +29,9 @@ Use both guides. They cover two sides of the same job:
    - which demo org/user and which MCP server name
    - the modules the widget uses
    - the rules: CRUD only through `ZOHO.CRM.API`, wait for `PageLoad`, use API
-     names not display labels
+     names not display labels. For the full set (paging, batching, errors,
+     money, dates and more), paste the prompt snippet from
+     [09-IMPLEMENTATION-PITFALLS.md](09-IMPLEMENTATION-PITFALLS.md#prompt-snippet).
 
 ## Each feature
 
@@ -50,6 +52,8 @@ Use both guides. They cover two sides of the same job:
 - **Demo org only.** Writes from both the widget and Claude are real.
 - **The two connections can run as different users.** MCP calls run as the
   demo user who authorized the server. The widget runs as whoever is logged
-  into CRM. Keep them in the same org.
+  into CRM. Keep them in the same org. In live mode
+  ([03](03-ZOHO-CRM-WIDGET-LOCAL-DEV.md)) the widget instead runs as the owner
+  of the refresh token.
 - **Not a secrets store:** don't put tokens in the repo, and keep `.mcp.json`
   in `.gitignore`.

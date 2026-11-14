@@ -13,7 +13,9 @@ A first draft, whether written by Claude or by a person, usually handles the nor
 - `CRM platforms`: Zoho, Salesforce, HubSpot, Dynamics and other platforms where admins can change the data model.
 - `Zoho-specific`: mostly a Zoho problem.
 
-> Zoho limits change by API version and edition. Check the numbers in the [appendix](#zoho-limits-appendix) against the current Zoho docs and your org's edition.
+> Zoho limits change by API version and edition. Check the numbers in the [appendix](#zoho-limits-appendix) against the current Zoho docs and your org's edition. Menu paths are approximate, because Zoho renames menus between versions (for example, Developer Space and Developer Hub).
+>
+> Some Zoho solutions use MCP tools that aren't in the basic setup from [02-ZOHO-CRM-MCP-SETUP.md](02-ZOHO-CRM-MCP-SETUP.md), such as `executeCOQLQuery`, `getLayouts` and `getWorkflowRules`. See its "Optional tools" section.
 
 ---
 
@@ -195,6 +197,8 @@ async function getAll(entity) {
 
 **Zoho solution:** List the active rules with **Setup → Automation → Workflow Rules**, or with `getWorkflowRules` over MCP. On API writes, pass `trigger: []` to skip workflows, approvals and blueprints, or pass `trigger: ["workflow"]` to run only workflows. Remember that each function a workflow runs also uses API credits.
 
+**Watch out in live mode:** the fake SDK in [03-ZOHO-CRM-WIDGET-LOCAL-DEV.md](03-ZOHO-CRM-WIDGET-LOCAL-DEV.md) sends `trigger: []` by default, so workflows never fire during local development. Test workflow side effects inside CRM with `zet run`.
+
 ### 18. Data centres — `Zoho-specific`
 
 **Problem:** The API URL is hardcoded to `zohoapis.com`, so the code fails for orgs hosted in another region.
@@ -210,6 +214,8 @@ async function getAll(entity) {
 **Universal solution:** Test with users in the least privileged role. Handle "no access" as a normal state, not a crash.
 
 **Zoho solution:** Create a test user with the **Standard** profile, or the client's real sales profile, and test the widget as that user. Check module permissions and field-level security for each field the widget reads or writes. Handle `NO_PERMISSION` responses with a clear message.
+
+**Watch out in live mode:** in [03-ZOHO-CRM-WIDGET-LOCAL-DEV.md](03-ZOHO-CRM-WIDGET-LOCAL-DEV.md), every call runs as the owner of the refresh token, usually an admin, so permission problems don't show up locally. Test as a non-admin user inside CRM with `zet run`.
 
 ---
 

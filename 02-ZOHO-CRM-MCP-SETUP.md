@@ -94,6 +94,22 @@ Notes:
 - Deleted records go to the Recycle Bin and can be restored from there.
 - Every call runs as the demo user, so that user's profile permissions apply.
 
+### Optional tools used in other guides
+
+Add these the same way if you follow
+[09-IMPLEMENTATION-PITFALLS.md](09-IMPLEMENTATION-PITFALLS.md) or
+[10-GENERATING-IDEAS-FOR-END-USERS.md](10-GENERATING-IDEAS-FOR-END-USERS.md):
+
+| Task | Tool |
+|---|---|
+| Query records with SQL-like filters | `executeCOQLQuery` |
+| See layouts and their required fields | `getLayouts` |
+| See a record's change history | `getTimelines` |
+| List workflow rules | `getWorkflowRules` |
+
+Tool names and availability can differ between Zoho MCP versions. If one isn't
+listed under **Add More Tools**, ask Claude to work without it.
+
 ## Adding tools to an existing server
 
 The server URL does not change when you add tools, so `.mcp.json` stays the same.

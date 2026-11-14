@@ -55,7 +55,7 @@ ZOHO_DC=in
 
 **3. Get the data centre right.** `ZOHO_DC` must match the org, or the token
 refresh fails with `invalid_client`. demo3 is very likely `in` — its MCP
-endpoints are `*.zohomcp.in`. Valid values: `com`, `in`, `eu`, `au`, `jp`, `ca`.
+endpoints are `*.zohomcp.in`. Valid values: `com`, `in`, `eu`, `com.au`, `jp`, `ca`.
 
 **4. Restart the dev server.** Credentials are read at startup, not per request.
 

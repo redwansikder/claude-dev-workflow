@@ -122,3 +122,16 @@ you can confirm the fix in CRM.
 | Release | Upload the zip | Builds and cleans up test data |
 
 Menu names in step 5 are approximate, because Zoho changes them between versions.
+
+## Next: harden it
+
+This walkthrough is a working first version. Before using it with real client
+data, check it against
+[09-IMPLEMENTATION-PITFALLS.md](09-IMPLEMENTATION-PITFALLS.md). In particular:
+
+- **Paging (#2):** `getRelatedRecords` returns at most 200 payments per page.
+- **Money and currency (#10, #11):** the "Paid 4,500 / 10,000" total is
+  calculated with floats and ignores the Deal's currency.
+- **Duplicates (#13):** a double-click on Add Payment saves the payment twice.
+- **Concurrent edits and errors (#5, #6):** two users adding payments at once,
+  and failed saves with no message.

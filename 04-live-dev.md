@@ -55,7 +55,8 @@ ZOHO_DC=in
 
 **3. Get the data centre right.** `ZOHO_DC` must match the org, or the token
 refresh fails with `invalid_client`. demo3 is `com`. Valid values: `com`, `in`,
-`eu`, `au`, `jp`, `ca`.
+`eu`, `com.au`, `jp`, `ca`. The value is used as-is in `zohoapis.<dc>` and
+`accounts.zoho.<dc>`, so Australia is `com.au`, not `au`.
 
 This page previously said `in`, reasoning from MCP endpoints ending `.zohomcp.in`.
 Those endpoints belonged to a **different account** (60065097786) that was

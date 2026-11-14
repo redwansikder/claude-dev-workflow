@@ -85,6 +85,15 @@ zet run
 - **Bulk create:** max 100 records per call.
 - **Record widgets:** pass the record to the fake SDK, e.g.
   `installLiveZoho({ Entity: 'Leads', EntityId: ['<id>'] })`.
+- **Workflows don't fire locally.** The fake SDK sends `trigger: []` by
+  default, so workflow rules, approvals and blueprints are skipped. Inside CRM
+  the real SDK does fire them. Test workflow side effects with `zet run`.
+- **Permissions aren't the logged-in user's.** Every live call runs as the
+  owner of the refresh token, usually an admin. Inside CRM the widget runs as
+  whoever is logged in. Test as a non-admin user with `zet run`.
+
+See [09-IMPLEMENTATION-PITFALLS.md](09-IMPLEMENTATION-PITFALLS.md) for what else
+to check before shipping.
 
 ## Security
 
