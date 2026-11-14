@@ -98,7 +98,7 @@ Notes:
 
 Add these the same way if you follow
 [09-IMPLEMENTATION-PITFALLS.md](09-IMPLEMENTATION-PITFALLS.md) or
-[10-GENERATING-IDEAS-FOR-END-USERS.md](10-GENERATING-IDEAS-FOR-END-USERS.md):
+[product-discovery/01-GENERATING-IDEAS-FOR-ZOHO-USERS.md](product-discovery/01-GENERATING-IDEAS-FOR-ZOHO-USERS.md):
 
 | Task | Tool |
 |---|---|

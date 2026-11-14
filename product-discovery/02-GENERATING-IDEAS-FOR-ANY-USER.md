@@ -1,6 +1,6 @@
-# 11 — Generating Ideas for Any User
+# Generating ideas for any user
 
-The same methods as [10-GENERATING-IDEAS-FOR-END-USERS.md](10-GENERATING-IDEAS-FOR-END-USERS.md) work for any product. Only the places you look change.
+The same methods as [01-GENERATING-IDEAS-FOR-ZOHO-USERS.md](01-GENERATING-IDEAS-FOR-ZOHO-USERS.md) work for any product. Only the places you look change.
 
 ---
 
@@ -91,4 +91,4 @@ Then test cheaply before building:
 
 The same rule applies everywhere: ideas come from real friction, the best proof is an existing workaround, and the only real test is whether people use it.
 
-The CRM version ([10-GENERATING-IDEAS-FOR-END-USERS.md](10-GENERATING-IDEAS-FOR-END-USERS.md)) is this general method with a few extra sources: the CRM data, client requests, and the partner view across orgs.
+The CRM version ([01-GENERATING-IDEAS-FOR-ZOHO-USERS.md](01-GENERATING-IDEAS-FOR-ZOHO-USERS.md)) is this general method with a few extra sources: the CRM data, client requests, and the partner view across orgs.

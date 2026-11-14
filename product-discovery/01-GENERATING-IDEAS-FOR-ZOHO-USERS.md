@@ -1,4 +1,4 @@
-# 10 — Generating Ideas for End Users
+# Generating ideas for Zoho CRM users
 
 How to come up with ideas for widgets, features or tools that the people using Zoho CRM will actually want.
 
@@ -9,7 +9,7 @@ Good ideas mostly come from watching where users struggle, not from brainstormin
 ## 1. Watch the work
 
 - **Sit with a user for 30 minutes** while they do their normal job. Note every time they switch tabs, copy and paste, use a spreadsheet next to the CRM, or say "I always have to...". Each of these is a possible idea.
-- **Look for workarounds.** An Excel sheet kept beside the CRM, notes in a text field, a WhatsApp group for approvals: each one is an unmet need. The Payment Tracker idea ([06-EXAMPLE-PAYMENT-TRACKER.md](06-EXAMPLE-PAYMENT-TRACKER.md)) is this kind: payment data kept outside the CRM.
+- **Look for workarounds.** An Excel sheet kept beside the CRM, notes in a text field, a WhatsApp group for approvals: each one is an unmet need. The Payment Tracker idea ([06-EXAMPLE-PAYMENT-TRACKER.md](../06-EXAMPLE-PAYMENT-TRACKER.md)) is this kind: payment data kept outside the CRM.
 - **Ask about the last time it hurt,** not about what they want. "Tell me about the last time a deal got stuck" gets you real problems. "What features do you want?" gets you guesses.
 
 ---
@@ -66,4 +66,4 @@ Build the highest scorers as small versions, put them in front of real users wit
 
 Watch users, read the data, and log requests. Claude helps you expand and sort that material, but the idea has to start from something real.
 
-Once you've picked an idea, check the build against [09-IMPLEMENTATION-PITFALLS.md](09-IMPLEMENTATION-PITFALLS.md).
+Once you've picked an idea, check the build against [09-IMPLEMENTATION-PITFALLS.md](../09-IMPLEMENTATION-PITFALLS.md). For the general version of this method, see [02-GENERATING-IDEAS-FOR-ANY-USER.md](02-GENERATING-IDEAS-FOR-ANY-USER.md).
