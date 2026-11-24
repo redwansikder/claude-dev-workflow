@@ -16,8 +16,8 @@ With this setup, a power cut, a restart or a full chat costs you minutes instead
 | 2 | [Starting a new project](02-NEW-PROJECT-GUIDE.md) | Decide first, then write CLAUDE.md and PLAN.md before any code |
 | 3 | [Using skills](03-SKILLS-GUIDE.md) | When to make a skill and how to use it from PLAN.md |
 | 4 | [A real project, day by day](04-SCENARIO-MULTI-DAY.md) | Chapters 1–3 in a new project, built over 5 days with 7 interruptions |
-| 5 | [Checklist](05-CHECKLIST.md) | A quick review page to keep open while you work |
-| 6 | [From empty folder to first build](06-PROJECT-SETUP-WITH-CLAUDE.md) | A website project set up end to end, from the client PDF to the kickoff prompt |
+| 5 | [From empty folder to first build](05-PROJECT-SETUP-WITH-CLAUDE.md) | A website project set up end to end, from the client PDF to the kickoff prompt |
+| 6 | [Checklist](06-CHECKLIST.md) | A quick review page to keep open while you work |
 
 ## Sample files
 
